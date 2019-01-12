@@ -3,9 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>boards</title>
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+        var testStr = /*[[${test}]]*/ '-- test --';
+        /*]]>*/
+        alert(testStr);
+    </script>
 </head>
 <body>
     <h1>boards html</h1>
-    <h1 th:text="${boards}" ></h1>
+    <h1 th:text="${boards}"></h1>
+
+    <ul>
+        <li th:each="board, elementStat : ${boards}">
+            <span th:text="${elementStat.index}"></span>
+            <span th:text="${elementStat.even}"></span>
+            <span th:text="${elementStat.odd}"></span>
+            <span th:text="${elementStat.size}"></span>
+            <span th:text="${elementStat.first}"></span>
+            <span th:text="${elementStat.last}"></span>
+            <span th:text="${elementStat.current}"></span>
+            <span th:text="${board.title}">${board.title}</span>
+            <span th:text="${board.content}"></span>
+            <span th:text="${board.name}"></span>
+        </li>
+    </ul>
+
+    <div th:if="${#lists.size(boards) > 2}">
+        list.size() > 2<br>
+    </div>
+    <div th:if="${#lists.size(boards) < 4}">
+        list.size() < 4<br>
+    </div>
+
+    <div th:switch="${count}">
+        <p th:case="50">count is 50!</p>
+        <p th:case="100">count is 100!</p>
+        <p th:case="150">count is 150!</p>
+    </div>
 </body>
 </html>
