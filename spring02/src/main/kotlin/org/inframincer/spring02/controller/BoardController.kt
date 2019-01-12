@@ -17,9 +17,14 @@ class BoardController {
     }
 
     @GetMapping("/{id}")
-    fun view(@PathVariable(name = "id")id: Long, model: Model): String {
+    fun board(@PathVariable(name = "id")id: Long, model: Model): String {
         println("id $id")
         model.addAttribute("board", "board attribute")
         return "board"
+    }
+
+    @GetMapping("/write")
+    fun write(): String {
+        return "redirect:/boards"
     }
 }
