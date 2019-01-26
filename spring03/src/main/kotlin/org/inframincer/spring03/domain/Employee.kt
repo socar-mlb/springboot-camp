@@ -61,4 +61,15 @@ class Employee {
         set(department) {
             field = this.department
         }
+
+    override fun toString(): String {
+        return "Employee(empno=$empno, " +
+            "name=$name, " +
+            "job=$job, " +
+            "boss=$boss, " +
+            "hiredate=$hiredate, " +
+            "salary=$salary, " +
+            "comm=$comm, " +
+            "department=$department)"
+    }
 }
