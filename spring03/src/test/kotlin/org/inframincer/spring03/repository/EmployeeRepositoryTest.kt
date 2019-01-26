@@ -16,16 +16,28 @@ class EmployeeRepositoryTest {
     lateinit var employeeRepository: EmployeeRepository
 
     @Test
-    fun `test_find_all`() {
+    fun `findAll`() {
         employeeRepository.findAll().forEach {
             println(it)
         }
     }
 
     @Test
-    fun `test_get_employee`() {
+    fun `getEmployee`() {
         employeeRepository.getEmployee().forEach {
             println(it)
         }
+    }
+
+    @Test
+    fun `findById`() {
+        val employee = employeeRepository.findById(7369)
+        println(employee)
+    }
+
+    @Test
+    fun `getEmployeeById`() {
+        val employee = employeeRepository.getEmployeeById(7369)
+        println(employee)
     }
 }

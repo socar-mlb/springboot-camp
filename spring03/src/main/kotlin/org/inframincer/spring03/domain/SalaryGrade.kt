@@ -24,4 +24,10 @@ class SalaryGrade {
         set(hisal) {
             field = this.hisal
         }
+
+    override fun toString(): String {
+        return "SalaryGrade(grade=$grade, " +
+            "losal=$losal, " +
+            "hisal=$hisal)"
+    }
 }

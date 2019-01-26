@@ -66,7 +66,7 @@ class Employee {
         return "Employee(empno=$empno, " +
             "name=$name, " +
             "job=$job, " +
-            "boss=$boss, " +
+            "boss=${boss!!.name}, " +
             "hiredate=$hiredate, " +
             "salary=$salary, " +
             "comm=$comm, " +

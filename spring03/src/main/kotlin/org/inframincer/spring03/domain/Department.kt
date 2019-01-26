@@ -33,4 +33,11 @@ class Department {
 
     @OneToMany(mappedBy = "department")
     var employees: Set<Employee>? = null
+
+    override fun toString(): String {
+        return "Department(deptno=$deptno, " +
+            "name=$name, " +
+            "location=$location, " +
+            "employees=${employees!!.size})"
+    }
 }
