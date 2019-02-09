@@ -7,6 +7,9 @@ import org.springframework.data.repository.query.Param
 
 interface UserRepository : JpaRepository<User, Long> {
 
+    @Query("select u from User u where email = :email")
+    fun getUser(@Param("email") email: String): User
+
     @Query("select u from User u inner join fetch u.roles where email = :email")
     fun getUserByEmail(@Param("email") email: String): User
 }
