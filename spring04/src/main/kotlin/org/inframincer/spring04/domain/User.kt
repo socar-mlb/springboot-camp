@@ -36,6 +36,6 @@ class User {
     @ManyToMany
     @JoinTable(name = "users_roles",
         joinColumns = [JoinColumn(name = "user_id", referencedColumnName = "id")],
-        inverseJoinColumns = [JoinColumn(name = "role_is", referencedColumnName = "id")])
-    var roles: Set<User>? = null
+        inverseJoinColumns = [JoinColumn(name = "role_id", referencedColumnName = "id")])
+    var roles: Set<Role>? = null
 }
